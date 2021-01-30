@@ -1,0 +1,19 @@
+{
+  "name": "statistics",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "statistics"
+  ],
+  "author": "Solac",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "python-shell": "^2.0.3"
+  }
+}
