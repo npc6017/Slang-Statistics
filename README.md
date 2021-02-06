@@ -18,3 +18,7 @@
 1. 구글 드라이브에서 fasttext.bin을 [다운로드](https://drive.google.com/file/d/1pSJeoFHFlxuuU9BMBWLw6NAl9q21P05J/view?usp=sharing) 받는다.
 2. 다운로드 받은 파일을 Slang-Statistics / embedding_models 폴더에 넣는다.
 3. 실행
+
+
+## 환경설정을 제대로 하기 어려워 파일을 모두 꺼내놓았지만, 실험하기 위해서는 main.py를 실행하면 된다.
+패키지 추가 예정
