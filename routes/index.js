@@ -19,7 +19,7 @@ router.post('/', async (req, res, next) => {
         pythonPath: '',
         pythonOptions: ['-u'],
         scriptPath: '',
-        args: [JSON.stringify(req.body.crawling)], //parameter - crawling data
+        args: [JSON.stringify({ crawling: req.body.crawling})], //parameter - crawling data
     }
     try {
         //Python(Statistics) Call / Synchronous 
@@ -34,6 +34,7 @@ router.post('/', async (req, res, next) => {
             .catch((error) => {//Fail (Promise)
                 console.error(error);
             })
+            console.log(result);
             res.status(201).json(result);//Responce Result
     } catch (error) { // Fail (async/await)
         console.error(error); 
