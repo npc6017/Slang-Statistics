@@ -19,8 +19,9 @@ router.post('/', async (req, res, next) => {
         pythonPath: '',
         pythonOptions: ['-u'],
         scriptPath: '',
-        args: [JSON.stringify({ crawling: req.body.crawling})], //parameter - crawling data
+        args: [JSON.stringify({ crawling: req.body.crawling}).replace(/\\/g,"")], //parameter - crawling data
     }
+    console.log(JSON.stringify({ crawling: req.body.crawling}).replace(/\\/g,""));
     try {
         //Python(Statistics) Call / Synchronous 
         const result = await new Promise((resolve, request) => {
