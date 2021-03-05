@@ -12,6 +12,14 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res, next) => {
 
   // Request Data Set
+  
+  // Call Statistics API
+  const exResult = await axios.post(HOME, {crawling: req.body.crawling});
+  const result = exResult.data;
+  
+  // Data Filtering to Percent, Default : 0.7
+  const data = result.filter(e => e.persent > 0.7);
+
   /// Find Or Create User
   const user = await User.findOrCreate({
     where: { key: req.body.clientId},
@@ -25,13 +33,6 @@ router.post('/', async (req, res, next) => {
   });
   /// Url - User
   await user[0].addUrls(url);
-  
-  // Call Statistics API
-  const exResult = await axios.post(HOME, {crawling: req.body.crawling});
-  const result = exResult.data;
-  
-  // Data Filtering to Percent, Default : 0.7
-  const data = result.filter(e => e.persent > 0.7);
 
   // Data(Slang) Insert to DataBase
   /// Insert Slang
